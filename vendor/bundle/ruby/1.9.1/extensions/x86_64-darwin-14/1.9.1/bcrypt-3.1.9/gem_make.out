@@ -1,0 +1,16 @@
+/Users/scervera/.rvm/rubies/ruby-1.9.3-p551/bin/ruby -r ./siteconf20141228-16016-1eytx04.rb extconf.rb 
+creating Makefile
+
+make  clean
+
+make
+compiling bcrypt_ext.c
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.bundle
+
+make  install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle .gem.20141228-16016-vetm9r
+installing default bcrypt_ext libraries

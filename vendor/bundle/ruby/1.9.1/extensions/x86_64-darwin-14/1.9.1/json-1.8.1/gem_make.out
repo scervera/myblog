@@ -1,0 +1,12 @@
+/Users/scervera/.rvm/rubies/ruby-1.9.3-p551/bin/ruby -r ./siteconf20141228-16016-8zfwwq.rb extconf.rb 
+creating Makefile
+
+make  clean
+
+make
+compiling parser.c
+linking shared-object json/ext/parser.bundle
+
+make  install
+/usr/bin/install -c -m 0755 parser.bundle .gem.20141228-16016-1sejtru/json/ext
+installing default parser libraries
