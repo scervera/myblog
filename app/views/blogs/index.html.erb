@@ -1,6 +1,6 @@
 <h1>Blog Listing</h1>
 
-<table>
+<table class="table table-striped">
     <thead>
       <tr>
         <th>Title</th>
@@ -19,8 +19,8 @@
       <tr>
         <td><%= blog.title %></td>
         <td><%= blog.author %></td>
-        <td><%= blog.content %></td>
-        <td><%= blog.moderated %></td>
+        <td><%= blog.subtitle %></td>
+        <td><%= blog.publish %></td>
         <td><%= blog.created_at %></td>
         <td><%= link_to 'Show', blog %></td>
         <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
@@ -31,3 +31,4 @@
 </table>
 
 <%= link_to 'New Blog', new_blog_path %>
+</br>

@@ -8,7 +8,14 @@
 </head>
 <body>
 	<%= render "/shared/navbar" %>
-	<%= yield %>
+	<div class="row">
+		<div class="col-md-12 main-content">
+			<div class="post-wrap">
+				<%= yield %>
+			</br>
+			</div>
+		</div>
+	</div>
 	<!-- Footer starts here -->
 	<%= render "/shared/footer" %>
 	<!-- Footer ends here -->
