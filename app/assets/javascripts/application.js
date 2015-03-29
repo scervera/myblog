@@ -12,7 +12,7 @@
 //
 
 //= require jquery
-//= require jquery.turbolinks
+# //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-ui
 //= require "html5.js"
@@ -26,8 +26,11 @@
 //= require "jflickrfeed.min.js"
 //= require "jquery.jribbble-1.0.1.ugly.js"
 //= require "custom.js"
-//= require turbolinks
+# //= require turbolinks
+//= require_self
 //= require_tree .
+
+
 
 
 

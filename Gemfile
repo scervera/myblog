@@ -16,9 +16,9 @@ gem 'execjs'
 gem 'rubygems-bundler'
 
 # Use jquery as the JavaScript library
-
-gem 'jquery-ui-rails'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 # https://github.com/kossnocorp/jquery.turbolinks
 gem 'jquery-turbolinks'
 # Twitter Bootstrap
@@ -27,6 +27,7 @@ gem 'bootstrap-sass'
 gem 'sass-rails'
 # It is also recommended to use Autoprefixer with Bootstrap to add browser vendor prefixes automatically
 gem 'autoprefixer-rails'
+
 # Zurb Foundation
 #gem 'foundation-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
