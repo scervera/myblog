@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323074602) do
+ActiveRecord::Schema.define(version: 20150330183311) do
 
   create_table "blogs", force: true do |t|
     t.datetime "created_at"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150323074602) do
     t.boolean  "publish"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "video_link"
   end
 
 end

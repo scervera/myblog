@@ -28,9 +28,12 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        params[:post_attachments]['media'].each do |a|
-          @post_attachment = @post.post_attachments.create!(:media => a, :post_id => @post.id)
+        if (@post_attachments != nil)
+          params[:post_attachments]['media'].each do |a|
+            @post_attachment = @post.post_attachments.create!(:media => a, :post_id => @post.id)
+          end
         end
+        
         format.html { redirect_to @post, notice: 'Post was successfully created.'}
       else
         format.html { render action: 'new' }
