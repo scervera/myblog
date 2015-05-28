@@ -45,8 +45,13 @@ gem 'spring',        group: :development
 gem 'mysql2', '~> 0.3.14'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
-
+group :development do
+  gem 'capistrano' #, '~> 3.2.1'
+  gem 'capistrano-rails'
+  gem 'capistrano-secrets-yml', '~> 1.0.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-ssh-doctor', '~> 1.0'
+end
 # Bundle the extra gems:
 gem 'haml'
 gem 'devise'
