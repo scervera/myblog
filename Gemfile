@@ -51,6 +51,7 @@ group :development do
   gem 'capistrano-secrets-yml', '~> 1.0.0'
   gem 'capistrano-bundler'
   gem 'capistrano-ssh-doctor', '~> 1.0'
+  gem 'better_errors'
 end
 # Bundle the extra gems:
 gem 'haml'
