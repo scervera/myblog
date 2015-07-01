@@ -17,3 +17,5 @@ database.yml
 /log/*.log
 /tmp
 config/secrets.yml
+.DS_Store
+.ruby-version

@@ -13,5 +13,9 @@ linking shared-object bcrypt_ext.bundle
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 
 make "DESTDIR=" install
+<<<<<<< HEAD
 /usr/bin/install -m 0755 bcrypt_ext.bundle ./.gem.20150329-22818-10tlhlk
+=======
+/usr/bin/install -m 0755 bcrypt_ext.bundle ./.gem.20150329-19293-55lvh6
+>>>>>>> devise
 installing default bcrypt_ext libraries

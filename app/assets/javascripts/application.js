@@ -11,7 +11,7 @@
 // about supported directives.
 //
 
-//= require jquery
+//= require jquery 
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-ui
@@ -19,7 +19,7 @@
 //= require "jquery.nicescroll.min.js"
 //= require "modernizr.js"
 //= require "jquery.isotope.min.js"
-//= require "tabs.js"
+
 //= require "jquery.prettyPhoto.js"
 //= require "jquery.bxslider.min.js"
 //= require "twitter/jquery.tweet.js"
@@ -27,7 +27,14 @@
 //= require "jquery.jribbble-1.0.1.ugly.js"
 //= require "custom.js"
 //= require turbolinks
-//= require_tree .
+
+
+
+
+
+
+
+
 
 
 

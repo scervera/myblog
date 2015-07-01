@@ -247,7 +247,11 @@ int t(void) { sqlite3_column_database_name(); return 0; }
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 Undefined symbols for architecture x86_64:
   "_sqlite3_column_database_name", referenced from:
+<<<<<<< HEAD
       _t in conftest-972eca.o
+=======
+      _t in conftest-9fffeb.o
+>>>>>>> devise
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -301,7 +305,11 @@ int t(void) { sqlite3_enable_load_extension(); return 0; }
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 Undefined symbols for architecture x86_64:
   "_sqlite3_enable_load_extension", referenced from:
+<<<<<<< HEAD
       _t in conftest-02ce1a.o
+=======
+      _t in conftest-d488f9.o
+>>>>>>> devise
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:
@@ -355,7 +363,11 @@ int t(void) { sqlite3_load_extension(); return 0; }
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 Undefined symbols for architecture x86_64:
   "_sqlite3_load_extension", referenced from:
+<<<<<<< HEAD
       _t in conftest-a9524c.o
+=======
+      _t in conftest-c90631.o
+>>>>>>> devise
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 checked program was:

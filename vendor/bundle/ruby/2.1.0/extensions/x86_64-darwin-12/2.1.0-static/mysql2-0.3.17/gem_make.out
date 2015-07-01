@@ -27,5 +27,5 @@ linking shared-object mysql2/mysql2.bundle
 ld: warning: directory not found for option '-L/Users/travis/.sm/pkg/active/lib'
 
 make "DESTDIR=" install
-/usr/bin/install -m 0755 mysql2.bundle ./.gem.20150329-22818-a6ssvf/mysql2
+/usr/bin/install -m 0755 mysql2.bundle ./.gem.20150329-19293-1mgm1b7/mysql2
 installing default mysql2 libraries
