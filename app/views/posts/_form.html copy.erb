@@ -37,7 +37,6 @@
     <ul>
       <li><a href="#tabs-1">Upload Images</a></li>
       <li><a href="#tabs-2">Link to Video</a></li>
-      <li><a href="#tabs-3">Quote</a></li>
     </ul>
     <div id="tabs-1">
         <%= f.fields_for :post_attachments do |p| %>
@@ -54,23 +53,6 @@
       <div class="field">
         <%= f.label :video_link %><br>
         <%= f.text_field :video_link %>
-      </div>
-      <div class="actions"></br>
-        <%= f.submit %>
-      </div>
-    </div>
-    <div id="tabs-3">
-      <div class="field">
-        <%= f.label :quote_text %><br>
-        <%= f.text_field :quote_text %>
-      </div>
-      <div class="field">
-        <%= f.label :quote_author %><br>
-        <%= f.text_field :quote_author %>
-      </div>
-      <div class="field">
-        <%= f.label :quote_source %><br>
-        <%= f.text_field :quote_source %>
       </div>
       <div class="actions"></br>
         <%= f.submit %>

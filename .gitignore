@@ -18,4 +18,3 @@ database.yml
 /tmp
 config/secrets.yml
 .DS_Store
-.ruby-version

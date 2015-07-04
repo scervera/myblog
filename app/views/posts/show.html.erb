@@ -4,8 +4,23 @@
 <%#= link_to 'Back', blogs_path %> -->
 
 
-          <div class="post post-2 post-gallery single-post">
-            <div class="post-type"><i class="fa fa-image"></i></div>
+        <% if (@post.video_link != nil) %>
+          <div class="post post-2 single-post post-vimeo">
+        <% elsif (@post.quote_text != nil) %>
+          <div class="post post-2 single-post post-quote">
+        <% elsif (@post_attachments != nil) %>
+          <div class="post post-2 post-gallery single-post post-image">
+        <% end %>
+          <!-- <div class="post post-2 post-gallery single-post"> -->
+            
+            <% if (@post.video_link != nil) %>
+              <div class="post-type"><i class="fa fa-vimeo-square"></i></div>
+            <% elsif (@post.quote_text != nil) %>
+              <div class="post-type"><i class="fa fa-quote-left"></i></div>
+            <% elsif (@post_attachments != nil) %>
+              <div class="post-type"><i class="fa fa-image"></i></div>
+            <% end %>
+
             <div class="post-author"><%= image_tag ("about-img.png") %></div>
             <div class="clearfix"></div>
             <div class="post-head"><h3><%= @post.title %></h3>
@@ -27,6 +42,10 @@
                     <% end %>
                   </ul>
                 </div><!-- End post-img -->
+              <% end %>
+              <% if (@post.video_link != nil) %>
+                 <div class="post-img"><iframe height="420" src="<%= @post.video_link %>" frameborder="0" allowfullscreen></iframe></div>
+                <!-- End post-img -->
               <% end %>
               <div class="post-inner">
                 <!-- blog content begins here -->

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :edit, :update, :destroy]
   layout :resolve_layout
 
   respond_to :html
@@ -59,7 +60,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :subtitle, :author, :content, :publish, post_attachments_attributes: [:id, :post_id, :media])
+      params.require(:post).permit(:title, :subtitle, :author, :content, :publish, :quote_author, :quote_text, :quote_source, :video_link, post_attachments_attributes: [:id, :post_id, :media])
     end
 
     def resolve_layout
