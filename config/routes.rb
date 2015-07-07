@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   devise_for :admins
   resources :post_attachments
 
-  resources :posts
+  resources :posts do
+    get 'list', :on => :collection
+  end
+
+  match "blog" => "posts#list", via: [:get, :post]
 
   get 'pages/home'
 
@@ -13,7 +17,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#home'
+  root 'posts#list'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

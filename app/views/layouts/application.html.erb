@@ -3,12 +3,10 @@
 <!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 
-<head>
+	<%= render "/shared/header" %>
+<body>
 	<p class="notice white"><%= notice %></p>
     <p class="alert white"><%= alert %></p>
-	<%= render "/shared/header" %>
-</head>
-<body>
 	<%= yield %>
 	<%= render "/shared/footer" %>
 	<%= javascript_include_tag 'application', debug: true %>

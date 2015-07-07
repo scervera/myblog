@@ -10,6 +10,11 @@ class PostsController < ApplicationController
     respond_with(@posts)
   end
 
+  def list
+    @posts = Post.all
+    respond_with(@posts)
+  end
+
   def show
     @post_attachments = @post.post_attachments.all
     respond_with(@post)
@@ -67,7 +72,7 @@ class PostsController < ApplicationController
       case action_name
       when "edit", "new", "create", "index"
         "full_width"
-      when "show"
+      when "show", "list"
         "blog_rt"
       else
         "base"
