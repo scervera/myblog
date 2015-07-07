@@ -67,6 +67,7 @@ gem 'profanity_filter'
 gem 'carrierwave'
 gem 'mime-types'
 gem 'cancan'
+gem 'simple_form'
 
 # Slick carousel https://github.com/guyisra/slickjs_rails     http://kenwheeler.github.io/slick/
 gem 'slick_rails'

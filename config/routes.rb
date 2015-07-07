@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tags
+
   devise_for :users
   devise_for :admins
   resources :post_attachments
