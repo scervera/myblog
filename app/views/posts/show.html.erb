@@ -1,25 +1,23 @@
-<!-- <p id="notice"><%= notice %></p>
 
-<%#= link_to 'Edit', edit_blog_path(@post) %> |
-<%#= link_to 'Back', blogs_path %> -->
-
-
-      <% if (@post.video_link != nil) %>
-        <div class="post post-2 single-post post-vimeo">
-      <% elsif (@post.quote_text != nil) %>
-        <div class="post post-2 single-post post-quote">
-      <% elsif (@post_attachments != nil) %>
-        <div class="post post-2 post-gallery single-post post-image">
+    <% if (@post.category == 'video') %>
+      <div class="post post-youtube">
+    <% elsif (@post.category == 'quote') %>
+      <div class="post post-quote">
+    <% elsif (@post.category == 'image') %>
+      <% if @post.post_attachments.count == 1 %>
+        <div class="post post-image">
+      <% else %>
+        <div class="post post-gallery">
       <% end %>
-        <!-- <div class="post post-2 post-gallery single-post"> -->
-            
-          <% if (@post.video_link != nil) %>
-            <div class="post-type"><i class="fa fa-vimeo-square"></i></div>
-          <% elsif (@post.quote_text != nil) %>
-            <div class="post-type"><i class="fa fa-quote-left"></i></div>
-          <% elsif (@post_attachments != nil) %>
-            <div class="post-type"><i class="fa fa-image"></i></div>
-          <% end %>
+    <% end %>
+        
+        <% if (@post.category == 'video') %>
+          <div class="post-type"><i class="fa fa-youtube-play"></i></div>
+        <% elsif (@post.category == 'quote') %>
+          <div class="post-type"><i class="fa fa-quote-left"></i></div>
+        <% elsif (@post.category == 'image') %>
+          <div class="post-type"><i class="fa fa-image"></i></div>
+        <% end %>
 
               <div class="post-author"><%= image_tag ("about-img.png") %></div>
               <div class="clearfix"></div>
@@ -34,57 +32,110 @@
               </div><!-- End post-head -->
 
               <div class="post-wrap">
-                <% if (@post_attachments != nil) %>
-                  <div class="post-img">
-                    <ul>
-                      <% @post_attachments.each do |p| %>
-                        <li><a href="single-blog.html"><%= image_tag p.media_url %></a></li>
-                      <% end %>
-                    </ul>
-                  </div><!-- End post-img -->
-                <% end %>
-                <% if (@post.video_link != nil) %>
-                   <div class="post-img"><iframe height="420" src="<%= @post.video_link %>" frameborder="0" allowfullscreen></iframe></div>
-                  <!-- End post-img -->
-                <% end %>
+
+              <% if (@post.category == 'quote') %>
+              <!-- Begin quote post -->
+                <div class="post-inner">
+                  <div class="post-quote-top"><i class="fa fa-quote-left"></i></div>
+                  <p><%= @post.quote_text %></p>
+                  <span class="author">― <%= @post.quote_author %></span>
+                  <div class="post-quote-bottom"><i class="fa fa-quote-right"></i></div>
+                  <div class="clearfix"></div>
+                </div> <!-- End post-inner  -->
+              <% end %> 
+
+              <% if (@post.category == 'image') %>
+                <!-- Begin image post -->
+                <div class="post-img">
+                  <ul>
+                    <% @post.post_attachments.each do |p| %>
+                      <li><%= image_tag p.media_url %></li>
+                    <% end %>
+                  </ul>
+                </div><!-- End post-img -->
                 <div class="post-inner">
                   <!-- blog content begins here -->
-                  <%= @post.content %>  
-                  <!-- blog content ends here -->               
-                  <div class="clearfix"></div>
-                  <div class="post-share-view">
-                    <div class="post-meta">
-                      <div><i class="fa fa-eye"></i><span>145 </span>Views</div>
-                      <div class="post-meta-share">
-                        <i class="fa fa-share-alt"></i>
-                        <a href="#">Share This</a>
-                        <div class="share-social">
-                          <ul>
-                            <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="social-google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                          </ul>
-                          <i class="fa fa-caret-down"></i>
-                        </div><!-- End follow-social -->
-                      </div>
-                      <div class="post-tags">
-                        <i class="fa fa-tags"></i>
-                        Tags : <a href="#">2code</a>, <a href="#">Begha</a>, <a href="#">Design</a>, <a href="#">Logger</a>, <a href="#">Blog</a>, <a href="#">Single</a>, <a href="#">Quote</a>
-                      </div>
-                    </div><!-- End post-meta -->
-                  </div><!-- End post-share-view -->
+                  <p><%= @post.content %> </p>
+                  <!-- blog content ends here -->            
+                    <div class="clearfix"></div>
+                    <div class="post-share-view">
+                      <div class="post-meta">
+                        <div><i class="fa fa-eye"></i><span>145 </span>Views</div>
+                        <div class="post-meta-share">
+                          <i class="fa fa-share-alt"></i>
+                          <a href="#">Share This</a>
+                          <div class="share-social">
+                            <ul>
+                              <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                              <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                              <li class="social-google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                            <i class="fa fa-caret-down"></i>
+                          </div><!-- End share-social -->
+                        </div>
+                        <% unless (@post.quote_text != nil) %>
+                          <%= link_to 'Read More', @post, class: "button post-more" %>
+                        <% end %>
+                        <!-- <div class="post-tags">
+                          <i class="fa fa-tags"></i>
+                          Tags : <a href="#">2code</a>, <a href="#">Begha</a>, <a href="#">Design</a>, <a href="#">Logger</a>, <a href="#">Blog</a>, <a href="#">Single</a>, <a href="#">Quote</a>
+                        </div> -->
+                      </div><!-- End post-meta -->
+                    </div><!-- End post-share-view -->
+              
                   <div class="clearfix"></div>
                 </div><!-- End post-inner -->
+              <% end %>
+              
+              <% if (@post.category == 'video') %>
+              <!-- Begin video post -->
+                <div class="post-img"><iframe height="420" src="<%= post.video_link %>" frameborder="0" allowfullscreen></iframe></div>
+                <!-- End post-img -->
+                <div class="post-inner">
+                    <!-- blog content begins here -->
+                    <p><%= @post.content %> </p>
+                    <!-- blog content ends here -->            
+                      <div class="clearfix"></div>
+                      <div class="post-share-view">
+                        <div class="post-meta">
+                          <div><i class="fa fa-eye"></i><span>145 </span>Views</div>
+                          <div class="post-meta-share">
+                            <i class="fa fa-share-alt"></i>
+                            <a href="#">Share This</a>
+                            <div class="share-social">
+                              <ul>
+                                <li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="social-google"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                              </ul>
+                              <i class="fa fa-caret-down"></i>
+                            </div><!-- End share-social -->
+                          </div>
+                          <% unless (@post.quote_text != nil) %>
+                            <%= link_to 'Read More', @post, class: "button post-more" %>
+                          <% end %>
+                          <!-- <div class="post-tags">
+                            <i class="fa fa-tags"></i>
+                            Tags : <a href="#">2code</a>, <a href="#">Begha</a>, <a href="#">Design</a>, <a href="#">Logger</a>, <a href="#">Blog</a>, <a href="#">Single</a>, <a href="#">Quote</a>
+                          </div> -->
+                        </div><!-- End post-meta -->
+                      </div><!-- End post-share-view -->
+                
+                    <div class="clearfix"></div>
+                </div><!-- End post-inner -->
+              <% end %>
               </div><!-- End post-wrap -->
             </div><!-- End post -->
+
+
+
+
             <div class="page-navigation clearfix">
               <div class="nav-next"><a href="#"><i class="fa fa-angle-double-left"></i><span>Old Entries</span></a></div>
               <div class="nav-previous"><a href="#"><span>New Entries</span><i class="fa fa-angle-double-right"></i></a></div>
             </div><!-- End page-navigation -->
             <div class="height_20"></div>
             
-
-
 
             <div class="post">
               <div class="post-wrap">

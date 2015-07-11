@@ -1,6 +1,6 @@
 	<header id="header">
 		<div class="container clearfix">
-			<div class="logo"><a href="index.html">Deomai</a></div><!-- End logo -->
+			<div class="logo"><%= link_to 'Deomai', root_path %></a></div><!-- End logo -->
 			<div class="header-follow">
 				<div class="header-follow-a">Follow Me</div>
 				<div class="follow-social">
@@ -8,9 +8,9 @@
 					<ul>
 						<li class="social-facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
 						<li class="social-twitter"><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-						<li class="social-dribbble"><a href="#"><i class="fa fa-dribbble"></i>Dribbble</a></li>
+						<!-- <li class="social-dribbble"><a href="#"><i class="fa fa-dribbble"></i>Dribbble</a></li>
 						<li class="social-google"><a href="#"><i class="fa fa-google-plus"></i>Google Plus</a></li>
-						<li class="social-vimeo"><a href="#"><i class="fa fa-vimeo-square"></i>Vimeo</a></li>
+						<li class="social-vimeo"><a href="#"><i class="fa fa-vimeo-square"></i>Vimeo</a></li> -->
 						<li class="social-youtube"><a href="#"><i class="fa fa-youtube-play"></i>Youtube</a></li>
 					</ul>
 				</div><!-- End follow-social -->
@@ -21,36 +21,8 @@
 			<nav class="navigation">
 				<ul>
 					<li><%= link_to "Home", root_path %></li>
-					<li><a href="right-sidebar.html">Pages</a>
-						<ul>
-							<li><a href="index.html">Headers</a>
-								<ul>
-									<li><a href="index.html">Header 1</a></li>
-									<li><a href="header-2.html">Header 2</a></li>
-									<li><a href="header-3.html">Header 3</a></li>
-									<li><a href="header-4.html">Fixed Navigation</a></li>
-								</ul>
-							</li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="authors.html">Authors</a></li>
-							<li><a href="right-sidebar.html">Page Right Sidebar</a></li>
-							<li><a href="left-sidebar.html">Page Left Sidebar</a></li>
-							<li><a href="centered-page.html">Page Centered Sidebar</a></li>
-							<li><a href="full-width.html">Page Full Width</a></li>
-							<li><a href="404.html">404 Page</a></li>
-						</ul>
-					</li>
-					<li class="current_page_item"><a href="single-blog.html">Single Blog</a>
-						<ul>
-							<li class="current_page_item"><a href="single-blog.html">Single Blog Right Sidebar</a></li>
-							<li><a href="single-blog-left-sidebar.html">Single Blog Left Sidebar</a></li>
-							<li><a href="single-blog-centered.html">Single Blog Centered</a></li>
-							<li><a href="single-blog-full-width.html">Single Blog Full Width</a></li>
-						</ul>
-					</li>
-					<li><a href="archives.html">Archives</a></li>
-					<li><a href="gallery.html">Gallery</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="archives.html">Recommended Reading</a></li>
 					<!-- Displays login status -->
 					<% if user_signed_in? %>
 					  <li>

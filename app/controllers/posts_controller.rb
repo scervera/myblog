@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        if (@post_attachments != nil)
+        unless (params[:post_attachments].blank?)
           params[:post_attachments]['media'].each do |a|
             @post_attachment = @post.post_attachments.create!(:media => a, :post_id => @post.id)
           end
@@ -65,7 +65,7 @@ class PostsController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :subtitle, :author, :content, :publish, :quote_author, :quote_text, :quote_source, :video_link, post_attachments_attributes: [:id, :post_id, :media])
+      params.require(:post).permit(:title, :subtitle, :author, :content, :publish, :quote_author, :quote_text, :quote_source, :video_link, :category, post_attachments_attributes: [:id, :post_id, :media])
     end
 
     def resolve_layout

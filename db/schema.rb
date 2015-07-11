@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707185446) do
+ActiveRecord::Schema.define(version: 20150710105513) do
 
   create_table "blogs", force: true do |t|
     t.datetime "created_at"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150707185446) do
     t.string   "quote_author"
     t.string   "quote_source"
     t.text     "quote_text"
+    t.string   "category"
   end
 
   create_table "posts_tags", id: false, force: true do |t|
