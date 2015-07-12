@@ -20,7 +20,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "responsive.css";
-@import "style.css";
+
 @import "http://fonts.googleapis.com/css?family=Open+Sans:400,600,700";
 @import "http://fonts.googleapis.com/css?family=Lato";
 @import "http://fonts.googleapis.com/css?family=Roboto+Slab:400,700";
@@ -29,9 +29,10 @@
 @import "fontello/css/fontello.css";
 @import "animate-custom.css";
 @import "lists.css";
+@import "style.css";
 
-@import "skins/skins.css";
 @import "dark";
+
 @import "skins/moderate_blue_2.css";
 
 
