@@ -556,7 +556,7 @@ input,textarea {
 /* 3 - Sidebar */
 /* Widget */
 .widget {
-	/*background-color: #FFF;*/
+	background-color: #FFF;
 	border-bottom: 1px solid #d3d5d7;
 	-webkit-box-shadow: 0 0 5px 0 #e2e3e4;
 	-moz-box-shadow: 0 0 5px 0 #e2e3e4;
