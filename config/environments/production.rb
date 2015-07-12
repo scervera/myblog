@@ -76,5 +76,5 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.assets.precompile = ['moderate_blue_2.css', 'skins.css']
+  # config.assets.precompile = ['moderate_blue_2.css', 'skins.css']
 end
